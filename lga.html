@@ -2,24 +2,66 @@
 <html>
 <head>
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="styles.css">
 </head>   
 <body>
 
-<h1>Cascading Dropdown Example</h1>
+<h1>Client Information</h1>
+
 <p id="demo"> STATES/LGAs </p>
-<form name="form1">
-  States:
-  <select name="state" >
-    <option value="" selected disabled>Select State of Origin</option>
-  </select>
-  <br><br> LGA:
-  <select name="lga" >
-    <option value="" selected disabled>Please select State first</option>
-  </select>
-  <br><br>
-</form>
+
+<table>
+  <tr>
+    <td>
+      <form name="form1" onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+
+        <label class="validation-error hide" id="fullNameValidationError" for="fname">First name:</label>
+        <input type="text" id="fname"  placeholder="John" required><br><br>
+        <label for="lname">Last name:</label>
+        <input type="text" id="lname"  placeholder="Doe"><br><br>
+        <label for="email">Email Address:</label>
+        <input type="mail" id="email" placeholder="Email@email.com" required><br><br>
+        <label for="phone">Phone Number:</label>
+        <input type="tel" id="phone"  placeholder="+2547** *** ***"><br><br>
+
+        States:
+        <select name="state" id="state">
+          <option value="" selected disabled>Select State of Origin</option>
+        </select>
+        <br><br> LGA:
+        <select name="lga" id="lga">
+          <option value="" selected disabled>Please select State first</option>
+        </select>
+        <br><br>
+
+        <p>By registering an account, you agree to our <a href="#">Terms & Privacy</a>.</p>
+  
+          <input type="submit" onclick="disply()" value="Submit">
+
+          <td>
+            <table class="list" id="detailsList">
+                <thead>
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>State</th>
+                        <th>LGA</th>
+                    </tr>
+                </thead>
+                <tbody>
+
+                </tbody>
+            </table>
+        </td>
+      </form>
+      </td>
+      </tr>
+      </table> 
 
 <script src = lga.js> </script>
+<script src = insert.js> </script>
 
 
 </body>

@@ -106,3 +106,6 @@ lgaform.state.onchange =_=>
     lgaform.lga.add( new Option(lgaName,lgaName))
     }
   }
+  function disply() {   
+    alert("Successfully submitted.");
+  }
